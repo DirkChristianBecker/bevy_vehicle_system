@@ -1,7 +1,16 @@
 [package]
-name = "bevy_lib_template"
+name = "bevy_vehicle_system"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+graphics = []
+default = ["graphics"]
+
 [dependencies]
-bevy = { version = "*", default-features = false, features = ["dynamic_linking"] }
+bevy = "*"
+avian3d = { version = "*", default-features = false, features = ["3d", "f32", "parry-f32", "debug-plugin"] }
+
+[dev-dependencies]
+bevy_panorbit_camera = { version = "*" }
+rand = { version = "*"}
